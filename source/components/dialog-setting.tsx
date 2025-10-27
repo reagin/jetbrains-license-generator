@@ -62,7 +62,7 @@ export function DialogSetting() {
   };
 
   return (
-    <dialog ref={dialogRef} className='absolute top-1/2 left-1/2 max-h-[85dvh] w-[min(90%,_40rem)] animate-dialog-in overflow-y-auto rounded-2xl bg-surface p-8 text-foreground shadow-2xl ring-1 ring-border select-none [scrollbar-width:none] backdrop:bg-surface/40 backdrop:backdrop-blur-md focus:outline-none' id={dialogSettingId}>
+    <dialog ref={dialogRef} className='absolute top-1/2 left-1/2 max-h-[85dvh] w-[min(90%,40rem)] animate-dialog-in overflow-y-auto rounded-2xl bg-surface p-8 text-foreground shadow-2xl ring-1 ring-border select-none [scrollbar-width:none] backdrop:bg-surface/40 backdrop:backdrop-blur-md focus:outline-none' id={dialogSettingId}>
       <form className='flex flex-col gap-6 font-mono' method='dialog' onReset={handleCancelChange} onSubmit={handleSaveChange}>
         <header className='flex flex-col items-center gap-2'>
           <h2 className='text-3xl font-bold tracking-wide text-foreground'>
@@ -79,7 +79,7 @@ export function DialogSetting() {
             { id: 'expiry', label: 'Expiry Date:', value: localExpiryDate, setter: setLocalExpiryDate, type: 'date' },
           ].map(field => (
             <div key={field.id} className='grid w-full grid-cols-[max-content_1fr] items-center gap-2'>
-              <label className='min-w-[7.5rem] text-right whitespace-nowrap text-foreground/70' htmlFor={field.id}>
+              <label className='min-w-30 text-right whitespace-nowrap text-foreground/70' htmlFor={field.id}>
                 {field.label}
               </label>
               <input autoComplete='off' className='w-full rounded-md border border-border bg-surface px-3 py-2 text-foreground transition-colors duration-150 placeholder:text-muted focus:ring-2 focus:ring-accent focus:outline-none' defaultValue={field.value} id={field.id} name={field.id} onChange={e => field.setter(e.target.value)} type={field.type || 'text'} />
@@ -87,10 +87,10 @@ export function DialogSetting() {
           ))}
         </main>
         <footer className='flex items-center justify-between gap-4'>
-          <button className='w-[min(50%,_14rem)] min-w-fit cursor-pointer rounded-xl bg-foreground/20 px-4 py-3 shadow shadow-foreground/30 transition-colors duration-150 hover:bg-foreground/30' type='reset'>
+          <button className='w-[min(50%,14rem)] min-w-fit cursor-pointer rounded-xl bg-foreground/20 px-4 py-3 shadow shadow-foreground/30 transition-colors duration-150 hover:bg-foreground/30' type='reset'>
             Cancel
           </button>
-          <button className='w-[min(50%,_14rem)] min-w-fit cursor-pointer rounded-xl bg-accent px-4 py-3 text-accent-foreground shadow shadow-accent/60 transition-colors duration-150 hover:bg-accent/70' type='submit'>
+          <button className='w-[min(50%,14rem)] min-w-fit cursor-pointer rounded-xl bg-accent px-4 py-3 text-accent-foreground shadow shadow-accent/60 transition-colors duration-150 hover:bg-accent/70' type='submit'>
             Save
           </button>
         </footer>

@@ -54,7 +54,7 @@ export function DialogDisclaimer() {
   }, []);
 
   return (
-    <dialog ref={dialogRef} className='absolute top-1/2 left-1/2 max-h-[85dvh] w-[min(90%,_50rem)] animate-dialog-in overflow-y-auto rounded-2xl bg-surface p-8 text-foreground shadow-2xl ring-1 ring-border select-none [scrollbar-width:none] backdrop:bg-surface/40 backdrop:backdrop-blur-md focus:outline-none' id={dialogDisclaimerId}>
+    <dialog ref={dialogRef} className='absolute top-1/2 left-1/2 max-h-[85dvh] w-[min(90%,50rem)] animate-dialog-in overflow-y-auto rounded-2xl bg-surface p-8 text-foreground shadow-2xl ring-1 ring-border select-none [scrollbar-width:none] backdrop:bg-surface/40 backdrop:backdrop-blur-md focus:outline-none' id={dialogDisclaimerId}>
       <form className='flex flex-col gap-6 font-mono' method='dialog'>
         <header className='flex flex-col items-center gap-2 text-center'>
           <h2 className='text-3xl font-bold tracking-wide text-foreground'>
@@ -98,7 +98,7 @@ export function DialogDisclaimer() {
           </li>
         </ol>
         <footer className='flex w-full justify-center'>
-          <button className='w-[min(50%,_24rem)] min-w-fit cursor-pointer rounded-lg bg-accent/80 px-6 py-3 text-sm font-medium text-accent-foreground shadow-md shadow-accent/60 transition-all duration-150 hover:scale-[1.02] hover:bg-accent active:scale-[0.98]' onClick={() => setIsAgree(true)} type='submit'>
+          <button className='w-[min(50%,24rem)] min-w-fit cursor-pointer rounded-lg bg-accent/80 px-6 py-3 text-sm font-medium text-accent-foreground shadow-md shadow-accent/60 transition-all duration-150 hover:scale-[1.02] hover:bg-accent active:scale-[0.98]' onClick={() => setIsAgree(true)} type='submit'>
             Agree To The Terms Above
           </button>
         </footer>

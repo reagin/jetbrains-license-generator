@@ -74,23 +74,16 @@ export function ProductCard(props: IDEDataItem | PluginDataItem) {
   const placeholder = adaptivePath('/pagelogo.svg');
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry && entry.isIntersecting) {
-        const realImg = new Image();
-        realImg.src = iconUrl;
-        realImg.onload = () => {
-          if (imgRef.current) imgRef.current.src = iconUrl;
-        };
-        observer.disconnect();
-      }
-    });
+    const realImg = new Image();
+    realImg.src = iconUrl;
 
-    if (imgRef.current) observer.observe(imgRef.current);
-    return () => observer.disconnect();
+    realImg.onload = () => {
+      if (imgRef.current) imgRef.current.src = iconUrl;
+    };
   }, [iconUrl]);
 
   return (
-    <article className={cn(`w-full rounded-xl bg-surface text-foreground shadow-xl ring-1 ring-border select-none hover:-translate-y-[2px] hover:ring-accent/40 md:w-5/6`, isProductMatch(props.name, text) ? '' : `hidden`)}>
+    <article className={cn(`w-full rounded-xl bg-surface text-foreground shadow-xl ring-1 ring-border select-none hover:-translate-y-0.5 hover:ring-accent/40 md:w-5/6`, isProductMatch(props.name, text) ? '' : `hidden`)}>
       <header className='flex items-center justify-between border-b border-border px-4 pb-1'>
         <span className='size-16 translate-y-1/2'>
           <img ref={imgRef} alt={`${props.name}'s logo`} className='pointer-events-none size-full' loading='lazy' src={placeholder} />
@@ -106,7 +99,7 @@ export function ProductCard(props: IDEDataItem | PluginDataItem) {
           {props.name}
         </span>
         <span className='group relative font-mono text-sm text-wrap wrap-anywhere'>
-          <button className='h-[4.5rem] w-full cursor-pointer rounded-full bg-muted/20 text-center font-light text-muted opacity-100 transition-all duration-200 hover:bg-muted/40 hover:text-foreground' onClick={copyProductLicense} type='button'>
+          <button className='h-18 w-full cursor-pointer rounded-full bg-muted/20 text-center font-light text-muted opacity-100 transition-all duration-200 hover:bg-muted/40 hover:text-foreground' onClick={copyProductLicense} type='button'>
             {isCopied === null ? 'Copy to clipboard' : isCopied ? '🎉 Copied' : '❌ Error'}
           </button>
           <span className='absolute top-0 left-0 hidden size-full items-center justify-center overflow-hidden bg-surface tracking-widest text-muted group-hover:hidden md:flex'>

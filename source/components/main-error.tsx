@@ -9,7 +9,7 @@ export function MainError() {
         </div>
       </div>
       <div className='flex flex-col items-center gap-2'>
-        <p className='text-lg font-semibold text-foreground/90 dark:text-foreground/100'>
+        <p className='text-lg font-semibold text-foreground/90 dark:text-foreground'>
           Failed to load data
         </p>
         <p className='text-sm text-foreground/60 dark:text-foreground/70'>
